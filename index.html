@@ -1,17 +1,21 @@
 <!doctype html>
-<meta charset=utf-8>
 <html lang="ru">
-<title>Генератор врагов Д. Медведева</title>
 <head>
+<meta charset=utf-8>
+<title>Генератор врагов Д. Медведева</title>
 <style>
-        .container {
-            display: flex;
+        #container {
+            display: none; /* Changed to `flex` if JS works */
             flex-direction: column;
             align-items: center;
         }
         #txt {
             font-size: 2em;
             margin-bottom: 1em;
+        }
+        #info {
+            color: #DDD;
+            user-select: none;
         }
         #btn {
             padding: 0.5em 1em;
@@ -21,9 +25,11 @@
 </style>
 </head>
 <body>
-    <div class="container">
+<noscript>This web application requires JavaScript to function. If you'd rather not, just read the page source.</noscript>
+    <div id="container">
         <p id="txt">...</p>
         <button id="btn" type="button" autofocus>↻</button>
+        <p id="info">Всего врагов: много</p>
     </div>
 <script type="text/javascript">
   const adj = [
@@ -114,6 +120,8 @@
   "чудаки на букву «м»",
   "шавки",
   ];
+  document.getElementById('container').style.display = "flex";
+  document.getElementById('info').innerText = `Всего врагов: ${adj.length*noun.length}`;
   var txt = document.getElementById("txt");
   function gen(event) {
 	txt.innerText=adj[adj.length * Math.random() | 0] + ' ' + noun[noun.length * Math.random() | 0];
