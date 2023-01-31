@@ -2,9 +2,29 @@
 <meta charset=utf-8>
 <html lang="ru">
 <title>Генератор врагов Д. Медведева</title>
+<head>
+<style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #txt {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+        #btn {
+            padding: 0.5em 1em;
+            font-size: 2vw;
+            min-width: 20vw;
+        }
+</style>
+</head>
 <body>
-<h1 id="txt">...</h1>
-<button id="btn" type="button" autofocus>...</button>
+    <div class="container">
+        <p id="txt">...</p>
+        <button id="btn" type="button" autofocus>↻</button>
+    </div>
 <script type="text/javascript">
   const adj = [
   "Безумные",
@@ -18,7 +38,7 @@
   "Каркающие",
   "Колониальные",
   "Кровожадные",
-  "Лающие"  ,
+  "Лающие",
   "Надменные",
   "Недалёкие",
   "Немощные",
