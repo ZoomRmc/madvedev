@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset=utf-8>
@@ -23,14 +23,6 @@
             min-width: 20vw;
         }
 </style>
-</head>
-<body>
-<noscript>This web application requires JavaScript to function. If you'd rather not, just read the page source.</noscript>
-    <div id="container">
-        <p id="txt">...</p>
-        <button id="btn" type="button" autofocus>↻</button>
-        <p id="info">Всего врагов: много</p>
-    </div>
 <script type="text/javascript">
   const adj = [
   "Безумные",
@@ -120,11 +112,28 @@
   "чудаки на букву «м»",
   "шавки",
   ];
+  </script>
+</head>
+<body>
+<noscript>This web application requires JavaScript to function. If you'd rather not, just read the page source.</noscript>
+    <div id="container">
+        <p id="txt">...</p>
+        <button id="btn" type="button" autofocus>↻</button>
+        <p id="info">Всего врагов: много</p>
+    </div>
+<script type="text/javascript">
   document.getElementById('container').style.display = "flex";
   document.getElementById('info').innerText = `Всего врагов: ${adj.length*noun.length}`;
   var txt = document.getElementById("txt");
+  var prev = [-1, -1];
+  function randNoRepeat(memoArr, idx, ceiling) {
+    var r = memoArr[idx];
+    while (r == memoArr[idx]) {r = ceiling * Math.random() | 0}
+	memoArr[idx] = r;
+    return r 
+  }
   function gen(event) {
-	txt.innerText=adj[adj.length * Math.random() | 0] + ' ' + noun[noun.length * Math.random() | 0];
+	txt.innerText=adj[randNoRepeat(prev, 0, adj.length)] + ' ' + noun[randNoRepeat(prev, 1, noun.length)];
   }
   var btn = document.getElementById("btn");
   btn.addEventListener("click", gen);
