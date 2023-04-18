@@ -4,23 +4,39 @@
 <meta charset=utf-8>
 <title>Генератор врагов Д. Медведева</title>
 <style>
+		body {
+			background-color: #EEE;
+			font-family: 'Fira Sans', sans-serif;
+			text-align: center;
+		}
         #container {
-            display: none; /* Changed to `flex` if JS works */
-            flex-direction: column;
-            align-items: center;
+			background-color: #FFF;
+			display: none; /* changed to `flex` if js works */
+			flex-direction: column;
+			align-items: center;
+			width: 95vmin;
+			min-width: 20rem;
+			margin: auto;
+			box-shadow: 0px 0px 0.5rem #DDD;
         }
         #txt {
-            font-size: 2em;
-            margin-bottom: 1em;
+			display: flex;
+			align-items: center;
+			font-size: 5vmin;
+			margin: 0.5em;
+			margin-bottom: 1em;
+			min-height: 2.4em;
         }
         #info {
-            color: #DDD;
-            user-select: none;
+			font-size: 2.4vmin;
+			color: #DDD;
+			user-select: none;
         }
         #btn {
-            padding: 0.5em 1em;
-            font-size: 2vw;
-            min-width: 20vw;
+			margin: auto;
+			padding: 1em 1em;
+			font-size: 2vw;
+			min-width: 30%;
         }
 </style>
 <script type="text/javascript">
@@ -124,7 +140,7 @@
 <body>
 <noscript>This web application requires JavaScript to function. If you'd rather not, just read the page source.</noscript>
     <div id="container">
-        <p id="txt">...</p>
+        <div id="txt"><p >...</p></div>
         <button id="btn" type="button" autofocus>↻</button>
         <p id="info">Всего врагов: много</p>
     </div>
